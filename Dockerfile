@@ -1,5 +1,7 @@
-FROM nginx:alpine
+FROM nginx
 
-COPY ./proxy.conf /etc/nginx/conf.d/proxy.conf
+COPY default.conf.template /etc/nginx/conf.d/default.conf.template
 
-CMD nginx -g "daemon off;"
+CMD /bin/bash -c "envsubst '\$PORT' < /etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf" && nginx -g 'daemon off;'
+
+EXPOSE $PORT
