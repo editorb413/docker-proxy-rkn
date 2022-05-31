@@ -13,7 +13,7 @@ docker buildx build --platform linux/amd64 -t appname .
 
 Создание тега для билда
 ```bash
-docker tag hodsfhksjdf registry.heroku.com/appname/web
+docker tag appname registry.heroku.com/appname/web
 ```
 
 Пушим билд в хероку
