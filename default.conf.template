@@ -4,7 +4,7 @@ server {
         proxy_set_header X-Forwarded-Host $host;
         proxy_set_header X-Forwarded-Server $host;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_pass https://get-site-copy-core.herokuapp.com/;
+        proxy_pass $URL;
         client_max_body_size 100M;
     }
 }
